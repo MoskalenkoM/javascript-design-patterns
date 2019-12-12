@@ -1,5 +1,7 @@
 // Singleton is a creational pattern.
 // Singleton ensures that the class has only one instance.
+// Одиночка - порождающий шаблон проектирования.
+// Синглтон гарантирует, что класс имеет только один экземпляр.
 
 class Singleton {
   constructor() {

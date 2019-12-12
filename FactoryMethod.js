@@ -1,27 +1,31 @@
 // Factory Method is a creational pattern.
+// Фабричный метод - порождающий шаблон проектирования.
 
-function chocolateFactory(type) {
-  const typeChocolate = type.toLowerCase();
-  if (typeChocolate === 'milk') {
-    return new CreateChocolate(typeChocolate, '$1');
-  } else if (typeChocolate === 'dark') {
-    return new CreateChocolate(typeChocolate, '$1.2');
+class chocolateFactory {
+  create(type) {
+    const chocolateType = type.toLowerCase();
+    if (chocolateType === 'milk') {
+      return new CreateChocolate(chocolateType, '$1');
+    } else if (chocolateType === 'dark') {
+      return new CreateChocolate(chocolateType, '$1.2');
+    }
   }
 }
 
 class CreateChocolate {
   constructor(type, price) {
-    this.type = type[0].toUpperCase() + type.slice(1);
+    this.type = type;
     this.price = price;
   }
-
   info() {
-    console.log(`chocolate: ${this.type}, price: ${this.price}`);
+    console.log(`chocolate: ${this.type[0].toUpperCase()}${this.type.slice(1)}, price: ${this.price}`);
   }
 }
 
-const milkChocolate = chocolateFactory('Milk');
-const darkChocolate = chocolateFactory('darK');
+const factory = new chocolateFactory();
+
+const milkChocolate = factory.create('Milk');
+const darkChocolate = factory.create('darK');
 
 milkChocolate.info();
 darkChocolate.info();

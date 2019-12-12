@@ -2,22 +2,14 @@
 // Абстрактная фабрика - порождающий шаблон проектирования.
 
 // Abstract Factory (Абстрактная фабрика)
-function factoryChocolate(type) {
-  const chocolateType = type.toLowerCase();
-  if (chocolateType === 'milk') {
-    return chocolateMilk();
-  } else if (chocolateType === 'dark') {
-    return chocolateDark();
+class factoryChocolate {
+  // Factories (Фабрики)
+  milk() {
+    return new CreateChocolateMilk('sweet');
   }
-}
-
-// Factories (Фабрики)
-function chocolateMilk() {
-  return new CreateChocolateMilk('sweet');
-}
-
-function chocolateDark() {
-  return new CreateChocolateDark('горький');
+  dark() {
+    return new CreateChocolateDark('горький');
+  }
 }
 
 // base class (базовый класс)
@@ -52,9 +44,15 @@ class CreateChocolateDark extends CreateChocolate {
   }
 }
 
+const chocolateCreate1 = new factoryChocolate();
+const chocolateCreate2 = new factoryChocolate();
 // Instances (Экземпляры)
-const chocolate1 = factoryChocolate('Milk');
-const chocolate2 = factoryChocolate('daRk');
+const milk1 = chocolateCreate1.milk();
+const dark1 = chocolateCreate1.dark();
+const milk2 = chocolateCreate2.milk();
+const dark2 = chocolateCreate2.dark();
 
-chocolate1.info();
-chocolate2.info();
+milk1.info();
+dark1.info();
+milk2.info();
+dark2.info();
