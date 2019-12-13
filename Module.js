@@ -1,3 +1,6 @@
+// Common JavaScript design patterns.
+// Общие шаблоны проектирования JavaScript.
+
 const footballTransfers = (() => {
   const players = [];
 
