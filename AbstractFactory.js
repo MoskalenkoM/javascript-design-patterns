@@ -20,7 +20,7 @@ function chocolateDark() {
   return new CreateChocolateDark('горький');
 }
 
-// base class (базовый класс)
+// Base class (базовый класс)
 class CreateChocolate {
   constructor(type) {
     this.chocolateType = type;
@@ -31,23 +31,23 @@ class CreateChocolate {
   }
 }
 
-// inherit and extend if necessary
-// наследуем и расширяем, если необходимо
+// Inherit and extend if necessary
+// Наследуем и расширяем, если необходимо
 class CreateChocolateMilk extends CreateChocolate {
   constructor(...args) {
     super(...args);
   }
 }
 
-// inherit and extend if necessary
-// наследуем и расширяем, если необходимо
+// Inherit and extend if necessary
+// Наследуем и расширяем, если необходимо
 class CreateChocolateDark extends CreateChocolate {
   constructor(...args) {
     super(...args);
   }
 
   info() {
-    // override method (переопределяем метод)
+    // Override method (Переопределяем метод)
     console.log(`Это ${this.chocolateType} шоколад`);
   }
 }
