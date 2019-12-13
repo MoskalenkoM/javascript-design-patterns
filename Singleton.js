@@ -25,12 +25,14 @@ class Singleton {
 
 const singleton1 = new Singleton();
 const singleton2 = new Singleton();
+const singleton3 = new Singleton();
 
 singleton1.increaseCount();
 singleton1.increaseCount();
 singleton2.increaseCount();
 singleton2.increaseCount();
-singleton2.increaseCount();
+singleton3.increaseCount();
 
 console.log(singleton1.getCount());
 console.log(singleton2.getCount());
+console.log(singleton3.getCount());
